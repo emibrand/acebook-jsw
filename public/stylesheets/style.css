@@ -68,10 +68,7 @@ a {
 
 .comment-divider {
   width: 600px;
-  background-color: white;
-  border-radius: 2px;
   box-shadow: 2px 2px #504f4f;
-  border: 0px;
   text-align: left;
 }
 
@@ -96,6 +93,12 @@ a {
 .form-header {
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+.comment-input {
+  margin-top: 3%;
+  width: 90%;
+  height: 30%;
 }
 
 

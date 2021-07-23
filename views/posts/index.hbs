@@ -19,32 +19,31 @@
     </form>
     <div class="container">
       <div class="row">
-      <form action="/posts/updateLikes/{{this.id}}" method="post" class="col-sm-1 align-left">
-        <button id="like-button" class="btn btn-circle btn-sm btn-outline-success no-border">
-        <i class="fas fa-thumbs-up fa-2x"></i>
-        </button><span id="like-counter">{{this.postLikeCounter}}</span>
-      </form>
-      
-      <form action="/posts/updateDislikes/{{this.id}}" method="post" class="col-sm-1 align-left">
-        <button id="dislike-button" class="btn btn-circle btn-sm btn-outline-danger no-border">
-        <i class="fas fa-thumbs-down fa-2x"></i>
-        </button><span id="dislike-counter">{{this.postDislikeCounter}}</span>
-      </form>
+        <div class="align-left col-sm-1">
+        <form action="/posts/updateLikes/{{this.id}}" method="post">
+          <button id="like-button" class="btn btn-circle btn-sm btn-outline-success no-border">
+          <i class="fas fa-thumbs-up fa-2x"></i>
+          </button><span id="like-counter">{{this.postLikeCounter}}</span>
+        </form>
+        </div>
+        <div class="col-sm-1">
+        <form action="/posts/updateDislikes/{{this.id}}" method="post">
+          <button id="dislike-button" class="btn btn-circle btn-sm btn-outline-danger no-border">
+          <i class="fas fa-thumbs-down fa-2x"></i>
+          </button><span id="dislike-counter">{{this.postDislikeCounter}}</span>
+        </form>
+        </div>
       </div>
-      
-      <span id="commentBox"></span>
-      
     </div>
-
     
     <br>
     
     <div class="card w-150">
       <div class="form-popup" id="commentFormBox">
         <div class="new-comment-container">
-        <button type="button"  style="float: left;" class="comment-toggle btn btn-outline-secondary btn-sm no-border" id="{{this._id}}">Comment</button>
+        <button type="button"  style="float: left;" class="comment-toggle btn btn-outline-secondary btn-sm no-border" id="{{this._id}}">Comment</button><br>
         <form action="/posts/{{this._id}}/comments" method="post" class="form-container" id="commentform-{{this._id}}" style="display: none;">
-        <input type="text" placeholder="Enter Comment" name="comment" required> 
+        <textarea class="comment-input rounded" type="text" placeholder="Enter Comment" name="comment" required></textarea> 
         <button type="submit" class="btn">Send</button>
         </form>
         </div> 
@@ -53,8 +52,8 @@
       {{#each this.comments}}
       <div class="d-flex justify-content-center py-2">
         <div class="comment-divider py-2 px-2"> 
-          <span class="text1">
-            <div class="comment-list">
+          <span>
+            <div>
             {{this}}
             </div>
           </span>
