@@ -15,12 +15,48 @@ a {
   background-size: cover;
 }
 
-.posts {
-  margin: 5% 17.5%;
+.main-container {
+  margin: 5% 26%;
+  width: 700px
 }
 
-.post-container {
-  border: 2px solid red;
-  border-radius: 20px;
+.btn-circle.btn-sm {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  font-size: 8px;
+  text-align: center;
 }
 
+.align-right {
+  border: 0;
+}
+
+.newcommentform-container{
+  border: 0;
+  
+}
+
+
+.second {
+  width: 600px;
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: 2px 2px #aaaaaa;
+  border: 0px;
+  text-align: left;
+}
+
+.text1 {
+  font-size: 13px;
+  font-weight: 500;
+  color: #56575b
+}
+
+.text2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #56575b;
+  text-align: left;
+}

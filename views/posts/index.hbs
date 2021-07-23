@@ -1,52 +1,90 @@
-<h1>Timeline</h1>
-<ul class="posts">
-  {{#each posts}}
-  <form action="/posts/{{this._id}}?_method=DELETE" method="post">
-    <li class="post-container">{{this.message}}
-        <input type="hidden" name="_method" value="DELETE">
-        <button type="submit" class="delete-button"><i class="fas fa-trash-alt fa-1x"></i></button>
-        <a class="update-post-link" href="/posts/update/{{this._id}}"><i class="fas fa-pencil-alt fa-1x"></i></a>
-    </li>
-  </form>
-  <div>
-    <button id="like-button" class="btn">
-      <i class="fas fa-thumbs-up fa-2x"></i>
-    </button>
-    <span id="like-counter"></span>
+<br>
+ <span class="text2" style="float: 100px;">Timeline</span>
+<br>
+<br>
+<a class="new-post-link" href="/posts/new">New post</a>
 
-    <button id="dislike-button" class="btn">
-      <i class="fas fa-thumbs-down fa-2x"></i>
-    </button>
-    <span id="dislike-counter"></span>
-    <span id="commentBox"></span>
+<div class="main-container posts">
+    {{#each posts}}
+  <div class="card w-300">
+    <form action="/posts/{{this._id}}?_method=DELETE" method="post">
+      <div class="post-container">
+        <br>
+        {{this.message}}
+          <input type="hidden" name="_method" value="DELETE">
+
+            <button type="submit" style="float: right;" class="delete-button btn btn-outline-secondary btn-sm align-right"><i class="fas fa-trash-alt fa-1x"></i></button>
+           <a class="update-post-link" href="/posts/update/{{this._id}}"><i class="fas fa-pencil-alt fa-1x"></i></a>
+        
+      </div>
+    </form>
+    <div>
+      <button id="like-button" class="btn btn-circle btn-sm btn-outline-success align-right">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+      </button>
+      <span id="like-counter"></span>
+
+      <button id="dislike-button" class="btn btn-circle btn-sm btn-outline-danger align-right">
+        <i class="fas fa-thumbs-down fa-2x"></i>
+      </button>
+      <span id="dislike-counter"></span>
+      <span id="commentBox"></span>
+      
+    </div>
+
+    
+    <br>
+    
+    <div class="card w-150">
+    <div class="form-popup" id="commentFormBox">
+
+      <br>
+      <div class="newcommentform-container">
+      <button type="button"  style="float: left;" class="comment-toggle btn btn-outline-secondary btn-sm align-right" id="{{this._id}}">Comment</button>
+      <form action="/posts/{{this._id}}/comments" method="post" class="form-container" id="commentform-{{this._id}}" style="display: none;">
+      <input type="text" placeholder="Enter Comment" name="comment" required> 
+      <button type="submit" class="btn">Send</button>
+      </form>
+      </div> 
+        
+        
+    
+      <br> 
+  <br>
+    
+    {{#each this.comments}}
+    <div class="d-flex justify-content-center py-2">
+      <div class="second py-2 px-2"> 
+        <span class="text1">
+          <div class="comment-list">
+          {{this}}
+          </div>
+        </span>
+      </div>
+    </div>
+    {{/each}}
+
+      <br>
+
+    </div>
+    </div> 
+
   </div>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  {{/each}}
+  <br>
+  <br>
+  <br>
+  
 
   
 
-  <button class="comment-toggle" id="{{this._id}}">Comment</button>
-
-  <div class="form-popup" id="commentFormBox">
-  <form action="/posts/{{this._id}}/comments" method="post" class="form-container" id="commentform-{{this._id}}" style="display: none;">
-    <input type="text" placeholder="Enter Comment" name="comment" required> 
-    <button type="submit" class="btn">Send</button>
-  </form> 
-      <br>
-    {{#each this.comments}}
-    <ul class="comment-list">
-      <li>{{this}}</li>
-    </ul>
-    {{/each}}
-    <br>  
-  </div>
- 
-  {{/each}}
-</ul>
-
-<a class="new-post-link" href="/posts/new">New post</a>
-
-
-
-
-
+</div>
+<br>
 
 
