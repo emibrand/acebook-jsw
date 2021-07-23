@@ -5,7 +5,7 @@
 
 <div class="main-container posts">
   {{#each posts}}
-  <div class="card w-300">
+  <div class="card w-300 post-card">
     <form action="/posts/{{this._id}}?_method=DELETE" method="post">
       <div class="post-container">
         <br>
@@ -17,20 +17,21 @@
         
       </div>
     </form>
-    <div>
-      <form action="/posts/updateLikes/{{this.id}}" method="post">
-      <button id="like-button" class="btn btn-circle btn-sm btn-outline-success no-border">
-      <i class="fas fa-thumbs-up fa-2x"></i>
-      </button>
+    <div class="container">
+      <div class="row">
+      <form action="/posts/updateLikes/{{this.id}}" method="post" class="col-sm-1 align-left">
+        <button id="like-button" class="btn btn-circle btn-sm btn-outline-success no-border">
+        <i class="fas fa-thumbs-up fa-2x"></i>
+        </button><span id="like-counter">{{this.postLikeCounter}}</span>
       </form>
-      <span id="like-counter">{{this.postLikeCounter}}</span>
-
-      <form action="/posts/updateDislikes/{{this.id}}" method="post">
-      <button id="dislike-button" class="btn btn-circle btn-sm btn-outline-danger no-border">
-      <i class="fas fa-thumbs-down fa-2x"></i>
-      </button>
-     </form>
-      <span id="dislike-counter">{{this.postDislikeCounter}}</span>
+      
+      <form action="/posts/updateDislikes/{{this.id}}" method="post" class="col-sm-1 align-left">
+        <button id="dislike-button" class="btn btn-circle btn-sm btn-outline-danger no-border">
+        <i class="fas fa-thumbs-down fa-2x"></i>
+        </button><span id="dislike-counter">{{this.postDislikeCounter}}</span>
+      </form>
+      </div>
+      
       <span id="commentBox"></span>
       
     </div>

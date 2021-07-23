@@ -17,7 +17,7 @@ a {
 
 .main-container {
   margin: 5% 26%;
-  width: 700px
+  width: 700px;
 }
 .large-form-style {
   height: 20rem; 
@@ -30,9 +30,6 @@ a {
   background-size: cover;
 }
 
-
-
-
 .btn-circle.btn-sm {
   width: 30px;
   height: 30px;
@@ -40,6 +37,19 @@ a {
   border-radius: 15px;
   font-size: 8px;
   text-align: center;
+}
+
+.post-card {
+  margin-bottom: 5%;
+}
+
+.new-post-link {
+  text-decoration: none;
+  color: #000;
+}
+
+.new-post-link:hover {
+  color: #d9534f;
 }
 
 .no-border {
@@ -60,16 +70,15 @@ a {
   width: 600px;
   background-color: white;
   border-radius: 2px;
-  box-shadow: 2px 2px #aaaaaa;
+  box-shadow: 2px 2px #504f4f;
   border: 0px;
   text-align: left;
 }
 
 .text1 {
-  font-size: 13px;
+  font-size: 2rem;
   font-weight: 500;
-  color: #56575b;
-  margin-top: 20%;
+  margin: 5% 0 2% 0;
 }
 
 .text2 {
