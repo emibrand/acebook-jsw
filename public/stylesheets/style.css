@@ -1,5 +1,5 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Montserrat", sans-serif;
 }
 
 a {
@@ -19,6 +19,19 @@ a {
   margin: 5% 26%;
   width: 700px
 }
+.large-form-style {
+  height: 20rem; 
+  width: 50rem;
+  margin-top: 7.5%;
+  border-radius: 20px;
+  background-image: url("https://i.ibb.co/xSkx66J/Hearts-ace-on-cards.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
 
 .btn-circle.btn-sm {
   width: 30px;
@@ -29,17 +42,21 @@ a {
   text-align: center;
 }
 
-.align-right {
+.no-border {
   border: 0;
 }
 
-.newcommentform-container{
+.delete-button{
+  float: right;
+}
+
+.new-comment-container{
   border: 0;
   
 }
 
 
-.second {
+.comment-divider {
   width: 600px;
   background-color: white;
   border-radius: 2px;
@@ -51,7 +68,8 @@ a {
 .text1 {
   font-size: 13px;
   font-weight: 500;
-  color: #56575b
+  color: #56575b;
+  margin-top: 20%;
 }
 
 .text2 {
@@ -60,3 +78,14 @@ a {
   color: #56575b;
   text-align: left;
 }
+.post-input {
+  width: 90%;
+  height: 70%;
+  border-radius: 10px;
+}
+
+.form-header {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+

@@ -1,11 +1,10 @@
-<br>
- <span class="text2" style="float: 100px;">Timeline</span>
-<br>
-<br>
+
+<h1 class="text1">Timeline</h1>
+
 <a class="new-post-link" href="/posts/new">New post</a>
 
 <div class="main-container posts">
-    {{#each posts}}
+  {{#each posts}}
   <div class="card w-300">
     <form action="/posts/{{this._id}}?_method=DELETE" method="post">
       <div class="post-container">
@@ -13,21 +12,25 @@
         {{this.message}}
           <input type="hidden" name="_method" value="DELETE">
 
-            <button type="submit" style="float: right;" class="delete-button btn btn-outline-secondary btn-sm align-right"><i class="fas fa-trash-alt fa-1x"></i></button>
+            <button type="submit" class="delete-button btn btn-outline-secondary btn-sm no-border"><i class="fas fa-trash-alt fa-1x"></i></button>
            <a class="update-post-link" href="/posts/update/{{this._id}}"><i class="fas fa-pencil-alt fa-1x"></i></a>
         
       </div>
     </form>
     <div>
-      <button id="like-button" class="btn btn-circle btn-sm btn-outline-success align-right">
-        <i class="fas fa-thumbs-up fa-2x"></i>
+      <form action="/posts/updateLikes/{{this.id}}" method="post">
+      <button id="like-button" class="btn btn-circle btn-sm btn-outline-success no-border">
+      <i class="fas fa-thumbs-up fa-2x"></i>
       </button>
-      <span id="like-counter"></span>
+      </form>
+      <span id="like-counter">{{this.postLikeCounter}}</span>
 
-      <button id="dislike-button" class="btn btn-circle btn-sm btn-outline-danger align-right">
-        <i class="fas fa-thumbs-down fa-2x"></i>
+      <form action="/posts/updateDislikes/{{this.id}}" method="post">
+      <button id="dislike-button" class="btn btn-circle btn-sm btn-outline-danger no-border">
+      <i class="fas fa-thumbs-down fa-2x"></i>
       </button>
-      <span id="dislike-counter"></span>
+     </form>
+      <span id="dislike-counter">{{this.postDislikeCounter}}</span>
       <span id="commentBox"></span>
       
     </div>
@@ -36,55 +39,31 @@
     <br>
     
     <div class="card w-150">
-    <div class="form-popup" id="commentFormBox">
-
-      <br>
-      <div class="newcommentform-container">
-      <button type="button"  style="float: left;" class="comment-toggle btn btn-outline-secondary btn-sm align-right" id="{{this._id}}">Comment</button>
-      <form action="/posts/{{this._id}}/comments" method="post" class="form-container" id="commentform-{{this._id}}" style="display: none;">
-      <input type="text" placeholder="Enter Comment" name="comment" required> 
-      <button type="submit" class="btn">Send</button>
-      </form>
-      </div> 
-        
-        
-    
-      <br> 
-  <br>
-    
-    {{#each this.comments}}
-    <div class="d-flex justify-content-center py-2">
-      <div class="second py-2 px-2"> 
-        <span class="text1">
-          <div class="comment-list">
-          {{this}}
-          </div>
-        </span>
+      <div class="form-popup" id="commentFormBox">
+        <div class="new-comment-container">
+        <button type="button"  style="float: left;" class="comment-toggle btn btn-outline-secondary btn-sm no-border" id="{{this._id}}">Comment</button>
+        <form action="/posts/{{this._id}}/comments" method="post" class="form-container" id="commentform-{{this._id}}" style="display: none;">
+        <input type="text" placeholder="Enter Comment" name="comment" required> 
+        <button type="submit" class="btn">Send</button>
+        </form>
+        </div> 
       </div>
-    </div>
-    {{/each}}
-
-      <br>
-
-    </div>
+    
+      {{#each this.comments}}
+      <div class="d-flex justify-content-center py-2">
+        <div class="comment-divider py-2 px-2"> 
+          <span class="text1">
+            <div class="comment-list">
+            {{this}}
+            </div>
+          </span>
+        </div>
+      </div>
+      {{/each}}
     </div> 
-
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-
-
-  {{/each}}
-  <br>
-  <br>
-  <br>
-  
-
-  
-
+  {{/each}}  
 </div>
-<br>
+
 
 
