@@ -14,26 +14,27 @@
   </head>
   <body class="text-center">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-      <a class="navbar-brand mx-3" href="/"><i class="fas fa-spade fa-2x"></i></a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-2" style="background: rgb(212,34,70);
+    background: radial-gradient(circle, rgba(212,34,70,1) 0%, rgba(0,0,0,1) 100%);">
+      <a class="navbar-brand mx-4" href="/"><i class="fas fa-spade fa-2x"></i></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
 
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto mx-2">
           <li class="nav-item">
-            <a class="nav-link" href="/sessions">Sign in</a>
+            <a class="nav-link" href="/sessions"><b>Sign in</b></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/posts">Timeline</a>
+            <a class="nav-link" href="/posts"><b>Timeline</b></a>
           </li>
         </ul>
 
 
         <span class="navbar-text ms-auto mb-2 mb-lg-0">
           <form action="/sessions/end" method="post">
-            <button class="btn btn-danger" type="submit" id="sign-out-button">Sign out</button>
+            <button class="btn btn-outline-danger btn-sm mx-4" type="submit" id="sign-out-button"><b>Sign out</b></button>
           </form>
         </span>
 
